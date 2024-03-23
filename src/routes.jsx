@@ -5,6 +5,8 @@ import { History } from "./pages/History/History";
 import { Progresssion } from "./pages/Progresssion/Progresssion";
 import { AccountSettings } from "./pages/AccountSettings/AccountSettings";
 import { Register } from "./pages/Register/Register";
+import { About } from "./pages/About/About";
+
 
 export const routes = [
   {
@@ -35,4 +37,9 @@ export const routes = [
     path: "/account-settings",
     Element: AccountSettings,
   },
+  {
+    path: "/about",
+    Element: About,
+  },
+ 
 ];

@@ -17,12 +17,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 const menuItems = [
   { id: "home", icon: faHome, text: "Home", path: "/" },
   {
-    id: "friends-list",
-    icon: faUsers,
-    text: "Friends list",
-    path: "/friends-list",
-  },
-  {
     id: "leaderboard",
     icon: faMedal,
     text: "Leaderboard",
