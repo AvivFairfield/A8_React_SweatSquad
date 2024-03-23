@@ -1,0 +1,14 @@
+.news-content {
+  padding: 2px;
+  animation: moveUp 8s linear infinite;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(130%);
+  }
+
+  100% {
+    transform: translateY(-130%);
+  }
+}
