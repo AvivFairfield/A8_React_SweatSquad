@@ -18,7 +18,7 @@ export const Card = ({ imgSrc, title, subtitle, date, onDone, onDelete }) => {
             className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             onClick={onDelete}
           >
-            Delete
+            Cancel
           </button>
           <button
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
