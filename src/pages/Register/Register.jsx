@@ -166,7 +166,7 @@ export const Register = () => {
 					</div>
 
 					<div className="text-center mt-1">
-						<SubmitButton type="submit">Sign In</SubmitButton>
+						<SubmitButton type="submit">Register</SubmitButton>
 						<p
 							onClick={() => navigate("/login")}
 							className="text-sm text-sky-600 hover:text-sky-500 cursor-pointer"
