@@ -61,7 +61,7 @@ export const UserMeasurements = () => {
 
         <Input
           id="weight"
-          labelText="Goal (Kg)"
+          labelText="Weight(Kg)"
           value={measurements.weight}
           onChange={handleMeasurementsChange}
           placeholder="Enter your weight"
