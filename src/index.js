@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-
+//Import Chart.js components for creating charts within the application
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -15,7 +15,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-
+//Register Chart.js components globally so they can be used anywhere in the app
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -25,7 +25,7 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
+//Create a root container for the React application targeting the "root" div in the HTML
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -35,7 +35,5 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();

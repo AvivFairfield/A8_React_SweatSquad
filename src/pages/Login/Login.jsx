@@ -20,33 +20,37 @@ export const Login = () => {
       [id]: value,
     }));
   };
-
+ //Function to handle form submission
   const handleSubmitForm = async (e) => {
-    e.preventDefault();
+    e.preventDefault();//Prevents the default form submission behavior
 
-    const { email, password } = formState;
-    if (!email || !password) return;
+    const { email, password } = formState;//Destructures email and password from the form state
+    if (!email || !password) return;//Checks if email and password are provided, exits if not
 
     try {
+      //Sends a POST request to the login endpoint with email and password
       const loginResponse = await postRequest("/login", {
         email: email,
         password: password,
       });
-
+       //If the login is successful
       if (loginResponse?.status === "success") {
+        //Extracts user information from the response
         const userEmail = email;
         const userFirtname = loginResponse?.first_name;
         const userLastname = loginResponse?.last_name;
-
+        //Stores user information in localStorage
         localStorage.setItem("email", userEmail);
         localStorage.setItem("firstname", userFirtname);
         localStorage.setItem("lastname", userLastname);
 
-        navigate("/");
+        navigate("/");//Navigates to the homepage
       } else {
+        //If login is unsuccessful, alerts the user with the message from the response
         alert(loginResponse?.message);
       }
     } catch (error) {
+       //Logs the error to the console if the request fails
       console.error("Error:", error);
     }
   };
