@@ -7,12 +7,15 @@ export const History = () => {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
+    //Asynchronously fetches user's workout history
     const userHistory = async () => {
-      const email = localStorage.getItem("email");
+      const email = localStorage.getItem("email");//Retrieves the user's email from localStorage
       const response = await postRequest("/getuserhistory", {
         email,
-      });
+      });//Sends a POST request to fetch the workout history
 
+
+      //If the response status is 'success', process the workouts data
       if (response?.status === "success") {
         const workoutsData =
           response?.workouts?.map((workout) => ({
@@ -20,11 +23,11 @@ export const History = () => {
             starting_datetime: formatDateTime(
               new Date(workout.starting_datetime)
             ),
-          })) || [];
+          })) || [];//Maps over the workouts data to include formatted datetime
 
-        setWorkouts(workoutsData);
+        setWorkouts(workoutsData);//Updates the workouts state with the formatted data
       } else {
-        alert(response?.message); // should return from api the message that says saved succesffuly
+        alert(response?.message); //Alerts the user if the response status is not 'success'
         console.log(response?.workouts);
       }
     };
