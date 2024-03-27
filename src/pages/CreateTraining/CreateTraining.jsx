@@ -56,7 +56,7 @@ export const CreateTraining = () => {
   };
 
   return (
-    <div className="grid place-items-center p-3">
+    <div className="grid place-items-center p-3 dark:bg-red">
       <Paper>
         <h1 className="text-2xl font-bold text-center">Training Selection</h1>
 
