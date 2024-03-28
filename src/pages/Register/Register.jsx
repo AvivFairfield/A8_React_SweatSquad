@@ -29,8 +29,16 @@ export const Register = () => {
 	const handleSubmitForm = async (e) => {
 		e.preventDefault();
 
-		const { birthdate, email, fullname, gender, goal, password, weight } =
-			formState;
+		const {
+			birthdate,
+			email,
+			fullname,
+			gender,
+			goal,
+			password,
+			weight,
+			height,
+		} = formState;
 
 		if (
 			!email ||
@@ -39,7 +47,8 @@ export const Register = () => {
 			!birthdate ||
 			!weight ||
 			!goal ||
-			!gender
+			!gender ||
+			!height
 		) {
 			return;
 		}
@@ -53,6 +62,7 @@ export const Register = () => {
 				weight,
 				goal,
 				gender,
+				height,
 			});
 
 			if (registerResponse?.status === "success") {
@@ -141,6 +151,14 @@ export const Register = () => {
 							type="number"
 							placeholder="Enter Goal"
 							value={formState.goal}
+							onChange={handleInputChange}
+						/>
+						<Input
+							id="height"
+							labelText="Height (cm)"
+							type="number"
+							placeholder="Enter Height"
+							value={formState.height}
 							onChange={handleInputChange}
 						/>
 					</div>
