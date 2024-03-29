@@ -27,6 +27,7 @@ export const Home = () => {
     </div>
     
       <p id="welcome_msg" className="text-xl text-center py-1 text-white ">
+      </p>
       {/* Displaying a welcome message with the user's name */}
       <p id="welcome_msg" className="text-xl text-center py-1 text-white">
         Hey there {firstName} {lastName}! check out what's new

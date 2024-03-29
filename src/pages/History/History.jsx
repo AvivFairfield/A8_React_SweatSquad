@@ -40,13 +40,13 @@ export const History = () => {
   );
 
   return (
-    <div className="grid max-h-96 md:w-3/4 md:p-8 p-2 text-white mx-auto my-0 text-center">
+    <div className="grid max-h-96 md:w-3/4 md:p-8 p-2 text-black mx-auto my-0 text-center">
       <h1 className="text-3xl font-bold mb-6">Workout History</h1>
 
       <div className="overflow-auto h-3/4">
         <table className="w-full h-full text-sm text-left dark:text-gray-400">
           <thead
-            className="text-xs uppercase bg-gray-50 dark:bg-gray-700 text-white"
+            className="text-xs uppercase bg-gray-50 dark:bg-gray-700 text-black"
             style={{ position: "sticky", top: 0, zIndex: 1 }}
           >
             <tr>
@@ -59,7 +59,7 @@ export const History = () => {
             {workouts.map((item, index) => (
               <tr
                 key={`${item.current_workout}-${index}`}
-                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-white"
+                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-color"
               >
                 <Cell>{item.current_workout}</Cell>
                 <Cell>{item.workout_location}</Cell>
