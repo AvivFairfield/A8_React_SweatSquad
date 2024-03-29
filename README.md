@@ -1,3 +1,6 @@
+server project repository: https://github.com/AvivFairfield/SweatSquadAPI
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,18 +1,44 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
-import { postRequest } from "../../api";
+import { postRequest,getRequest } from "../../api";
 
 export const UserMeasurements = () => {
   const [measurements, setMeasurements] = useState({
     height: "",
     weight: "",
   });
-
   const [goal, setGoal] = useState({
     goalWeight: "",
     goalDate: "",
   });
+
+
+   //useEffect is used to fetch user details when the component mounts.
+  useEffect(() => {
+    const fetchUserDetails = async () => {
+        try {
+          //fetch the email from localStorage
+            const email = localStorage.getItem("email");
+            const response = await getRequest(`/getUserDetails?email=${email}`);
+            if (response.status === "success") {
+               //Convert numerical data to string to ensure compatibility with input field values.
+                setMeasurements({
+                    height: response.data.height,
+                    weight: response.data.weight,
+                });
+            } else {
+                alert("Failed to fetch user details");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
+
+    fetchUserDetails();
+}, []);
+
+
 
   const handleMeasurementsChange = (e) => {
     setMeasurements({
