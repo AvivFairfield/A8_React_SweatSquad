@@ -71,6 +71,7 @@ export const CreateTraining = () => {
     }));
   };
 
+
   return (  // JSX returned by the component
     <div className="grid place-items-center p-3">
       <Paper>

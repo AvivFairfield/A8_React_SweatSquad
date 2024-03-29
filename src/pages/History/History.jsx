@@ -36,7 +36,7 @@ export const History = () => {
   }, []);
 
   const Cell = ({ children }) => (
-    <td className="sm:py-4 sm:px-6 py-3 px-4">{children}</td>
+    <td className="sm:py-4 sm:px-6 py-3 px-4 ">{children}</td>
   );
 
   return (

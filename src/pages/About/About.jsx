@@ -1,6 +1,7 @@
 import React from "react";
 import "./about.css";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../../components/Button";
 
 export const About = () => {
   const navigate = useNavigate();
@@ -27,9 +28,9 @@ export const About = () => {
         ))}
       </div>
 
-      <button className="mt-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => navigate("/")}>
+      <Button className="mt-8 text-white font-bold py-2 px-4 rounded" onClick={() => navigate("/")}>
         Back to Home
-      </button>
+      </Button>
     </div>
   );
 };
