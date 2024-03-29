@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { postRequest } from "../../api";
-
+//Pre-defined headers for the workout history table
 const headerCells = ["Workout", "Location", "Duration", "Date"];
 
 export const History = () => {
@@ -38,7 +38,7 @@ export const History = () => {
   const Cell = ({ children }) => (
     <td className="sm:py-4 sm:px-6 py-3 px-4 ">{children}</td>
   );
-
+  //Render the workout history UI
   return (
     <div className="grid max-h-96 md:w-3/4 md:p-8 p-2 text-black mx-auto my-0 text-center">
       <h1 className="text-3xl font-bold mb-6">Workout History</h1>
@@ -50,12 +50,14 @@ export const History = () => {
             style={{ position: "sticky", top: 0, zIndex: 1 }}
           >
             <tr>
+              {/* Map through headerCells to render each header cell */}
               {headerCells.map((cell) => (
                 <Cell key={cell}>{cell}</Cell>
               ))}
             </tr>
           </thead>
           <tbody>
+             {/* Map through workouts to render each row of workout data */}
             {workouts.map((item, index) => (
               <tr
                 key={`${item.current_workout}-${index}`}
@@ -73,8 +75,9 @@ export const History = () => {
     </div>
   );
 };
-
+//Utility function to format dates into a more readable format
 const formatDateTime = (date) => {
+   //Format the time part
   const formattedTime = `${date.getHours().toString().padStart(2, "0")}:${date
     .getMinutes()
     .toString()
@@ -84,5 +87,6 @@ const formatDateTime = (date) => {
   )
     .toString()
     .padStart(2, "0")}/${date.getFullYear()}`;
+    //Combine the date and time parts
   return `${formattedDate} ${formattedTime}`;
 };
