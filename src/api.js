@@ -1,6 +1,8 @@
 export async function getRequest(url) {
 	try {
-		const response = await fetch("http://localhost:5000" + url);
+		const response = await fetch(
+			"https://sweatsquadapi.onrender.com" + url
+		);
 
 		return await response.json();
 	} catch (error) {
