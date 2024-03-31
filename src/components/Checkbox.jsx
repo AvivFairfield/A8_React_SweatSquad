@@ -10,7 +10,7 @@ export const Checkbox = ({ placeholder, value, onChange, id, labelText }) => {
       <input
         type="checkbox"
         className="form-checkbox border-none ml-1 w-5 h-5"
-        placeholder={placeholder} // Consider removing as it's not standard for checkboxes.
+        placeholder={placeholder} 
         onChange={onChange}
         value={value}
       />
