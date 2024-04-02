@@ -1,0 +1,44 @@
+/* .themeButton {
+    font-size: 22px;
+} */
+
+/* .themeButton.light {
+    color: black;
+}
+
+.themeButton.dark {
+    color: white;
+} */
+
+.toggleContainer {
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    font-size: 0.5rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0.5rem;
+    position: relative;
+    width: 8rem;
+    height: 4rem; 
+    background-color: blue;
+}
+
+.toggleContainer.light {
+    background-color: rgb(255, 123, 0);
+    /* border: 2px solid black; */
+}
+
+.toggleContainer.dark {
+    background-color: gray;
+    /* border: 2px solid black; */
+}
+
+svg {
+    height: auto;
+    width: 2.5rem;
+    transition: all 0.5s linear;
+    
+    
+  }

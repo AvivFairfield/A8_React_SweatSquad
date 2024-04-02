@@ -1,0 +1,9 @@
+.card.dark {
+    background-color: white;
+    color: black;
+}
+
+.card.light {
+    background-color: black;
+    color: white;
+}

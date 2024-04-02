@@ -1,0 +1,14 @@
+.dark {
+    background-color: black;
+    color: white;
+    --tw-border-opacity: 1;
+    border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.light {
+    background-color: white;
+    color: black;
+
+    --tw-border-opacity: 1;
+    border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}

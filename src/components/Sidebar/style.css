@@ -1,0 +1,22 @@
+.sidebar.dark {
+    background-color: black;
+    color: white;
+    
+}
+
+.sidebar.light {
+    background-color: white;
+    color: black;
+}
+
+.sidebartext.dark {
+    color: white;
+    --tw-bg-opacity: 1;
+    background-color: rgb(38 38 38 / var(--tw-bg-opacity));
+}
+
+.sidebartext.light {
+    color: black;
+    --tw-bg-opacity: 1;
+    background-color: rgb(223, 210, 210);
+}
