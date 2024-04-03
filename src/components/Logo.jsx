@@ -17,7 +17,7 @@ export const Logo = () => {
 			src={
 				theme == "dark"
 					? `https://i.ibb.co/4jnQ609/white-logo.png`
-					: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRozUF_IOKpEGe22IryUa6uFLbmuAR9QIVX6lSY_Rr6uQ&s"
+					: "https://i.ibb.co/MZ5pW9V/logo.png"
 			} // The source URL of the logo image.
 		/>
 	);
