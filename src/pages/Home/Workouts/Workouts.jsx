@@ -111,7 +111,7 @@ export const Workouts = () => {
 							title={workout.current_workout}
 							subtitle={workout.workout_location}
 							date={workout.starting_datetime}
-							imgSrc={`/workoutsImages/${workout.current_workout}.jpg`}
+							imgSrc={`${workout.current_workout}.jpg`}
 							onDone={() => handleDoneWorkout(workout.id)}
 							onDelete={() => handleDeleteWorkout(workout.id)}
 						/>
