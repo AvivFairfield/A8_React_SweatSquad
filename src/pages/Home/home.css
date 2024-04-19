@@ -1,14 +1,16 @@
+/* CSS for animating news content */
 .news-content {
-  padding: 2px;
-  animation: moveUp 8s linear infinite;
+  padding: 2px;/* Adds 2 pixels of padding around the news content */
+  animation: moveUp 8s linear infinite;/* Applies the 'moveUp' animation to the news content, making it move upwards infinitely with a duration of 8 seconds */
 }
+/* Keyframes for the moveUp animation */
 
 @keyframes moveUp {
   0% {
-    transform: translateY(130%);
+    transform: translateY(130%);/* At the start of the animation, moves the content down by 130% of its height, effectively hiding it below its initial position */
   }
 
   100% {
-    transform: translateY(-130%);
+    transform: translateY(-130%);/* At the end of the animation, moves the content up by 130% of its height, effectively revealing it above its initial position */
   }
 }

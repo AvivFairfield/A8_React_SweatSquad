@@ -5,10 +5,10 @@ import { SubmitButton } from "../../components/SubmitButton";
 import { postRequest } from "../../api";
 import { useNavigate } from "react-router-dom";
 import { Radio } from "../../components/Radio";
-
+// Define the Register functional component
 export const Register = () => {
-	const navigate = useNavigate();
-
+	const navigate = useNavigate();// Initialize useNavigate hook for navigation
+	// Define state variables using useState hook to manage form input values
 	const [formState, setFormState] = useState({
 		fullname: "",
 		email: "",
@@ -18,17 +18,18 @@ export const Register = () => {
 		goal: "",
 		gender: "",
 	});
-
+	// Define a function to handle input change and update formState
 	const handleInputChange = (e) => {
 		setFormState((prev) => ({
 			...prev,
 			[e.target.id]: e.target.value,
 		}));
 	};
-
+	
+	// Define a function to handle form submission
 	const handleSubmitForm = async (e) => {
-		e.preventDefault();
-
+		e.preventDefault();// Prevent default form submission behavior
+		// Destructure form input values from formState
 		const {
 			birthdate,
 			email,
@@ -40,6 +41,7 @@ export const Register = () => {
 			height,
 		} = formState;
 
+		// Check if any required field is empty, return if so
 		if (
 			!email ||
 			!password ||
@@ -54,6 +56,7 @@ export const Register = () => {
 		}
 
 		try {
+			// Send a POST request to register user with form input values
 			const registerResponse = await postRequest("/registeruser", {
 				email,
 				password,
@@ -65,32 +68,36 @@ export const Register = () => {
 				height,
 			});
 
+			// If registration is successful
 			if (registerResponse?.status === "success") {
+				// Extract user information from the response
 				console.log("Success:", registerResponse);
 				const userEmail = email;
 				const userFirtname = registerResponse?.first_name;
 				const userLastname = registerResponse?.last_name;
-
+				// Store user information in localStorage
 				localStorage.setItem("email", userEmail);
 				localStorage.setItem("firstname", userFirtname);
 				localStorage.setItem("lastname", userLastname);
-
+				// Navigate to the homepage
 				navigate("/");
 			} else {
+				// If registration fails, alert the user with the message from the response
 				alert(registerResponse?.message);
 			}
 		} catch (error) {
+			// Log the error to the console if the request fails
 			console.error("Error:", error);
 		}
 	};
-
+	// Define a function to handle gender selection and update formState
 	const handleGenderChange = (value) => {
 		setFormState((prev) => ({
 			...prev,
 			gender: value,
 		}));
 	};
-
+	// Render the Register component UI
 	return (
 		<div className="grid place-items-center py-5">
 			<Paper>

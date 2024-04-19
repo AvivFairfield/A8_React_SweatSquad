@@ -1,17 +1,19 @@
+// Import React and necessary modules
 import React from "react";
 
-import { Paper } from "../../components/Paper";
+import { Paper } from "../../components/Paper";// Import Paper component
 
-import { UserMeasurements } from "./UserMeasurements";
-import { ChangePassword } from "./ChangePassword";
+import { UserMeasurements } from "./UserMeasurements";// Import UserMeasurements component
+import { ChangePassword } from "./ChangePassword";// Import ChangePassword component
+import { ThemeToggleButton } from "../../components/ThemeToggleButton/ThemeToggleButton";// Import ThemeToggleButton component
 
-import { ThemeToggleButton } from "../../components/ThemeToggleButton/ThemeToggleButton";
-
+// Define the AccountSettings component as a functional component
 export const AccountSettings = () => {
+    // Retrieve user information from localStorage
     const firstName = localStorage.getItem("firstname");
     const lastName = localStorage.getItem("lastname");
     const email = localStorage.getItem("email");
-
+    // Render the component
     return (
         <div className="grid place-items-center py-5">
             <ThemeToggleButton />

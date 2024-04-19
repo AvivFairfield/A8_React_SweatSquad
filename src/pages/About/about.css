@@ -1,14 +1,21 @@
+/* Style for news content */
 .news-content {
+    /* Adds padding around the content */
     padding: 2px;
+    /* Applies the 'moveUp' animation to the element */
     animation: moveUp 8s linear infinite;
   }
   
+  /* Keyframes for the 'moveUp' animation */
   @keyframes moveUp {
+    /* Starting state of the animation */ 
     0% {
+      /* Translates the element downward by 130% of its own height */
       transform: translateY(130%);
     }
-  
+  /* Ending state of the animation */
     100% {
+      /*Translates the element upward by 130% of its own height */
       transform: translateY(-130%);
     }
   }

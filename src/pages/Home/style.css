@@ -1,9 +1,10 @@
+/* CSS for dark mode */
 .dark {
-    background-color: black;
-    color: white;
+    background-color: black;/* Sets the background color to black */
+    color: white;/* Sets the text color to white */
 }
-
+/* CSS for light mode */
 .light {
-    background-color: white;
-    color: black;
+    background-color: white;/* Sets the background color to white */
+    color: black;/* Sets the text color to black */
 }
