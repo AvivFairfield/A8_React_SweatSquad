@@ -1,3 +1,4 @@
+//Import components from different pages to be used in routing
 import { Home } from "./pages/Home/Home";
 import { Login } from "./pages/Login/Login";
 import { CreateTraining } from "./pages/CreateTraining/CreateTraining";
@@ -8,18 +9,23 @@ import { Register } from "./pages/Register/Register";
 import { About } from "./pages/About/About";
 
 
+/**
+ * Defines the routes for the application. Each route object specifies a path
+ * and the component (Element) that should be rendered when the application's
+ * URL matches the path.
+ */
 export const routes = [
   {
-    path: "*",
-    Element: Home,
+    path: "*",//Matches any path not defined in the other route objects
+    Element: Home,//Component to render for the home page
   },
   {
-    path: "/login",
-    Element: Login,
+    path: "/login",//URL path for the login page
+    Element: Login,//Component to render for the login page
   },
   {
-    path: "/register",
-    Element: Register,
+    path: "/register", //URL path for the registration page
+    Element: Register,//Component to render for the registration page
   },
   {
     path: "/create-training",
