@@ -1,5 +1,6 @@
+// Import React, useEffect, useState hooks, and necessary modules
 import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";// Import FontAwesomeIcon component
 import {
 	faChevronRight,
 	faChevronLeft,
@@ -9,18 +10,20 @@ import { Card } from "../../../components/Card/Card";
 import { postRequest } from "../../../api";
 import { formatDateTime } from "../../../utils/formatDateTime";
 
+// Define the Workouts component as a functional componen
 export const Workouts = () => {
+	// State to manage user workouts, current slide index, and mobile viewport detection
 	const [workouts, setWorkouts] = useState([]);
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
+// useEffect hook to fetch user workouts when the component mounts
 	useEffect(() => {
 		const getUserWorkouts = async () => {
 			const email = localStorage.getItem("email");
 			const userWorkouts = await postRequest("/getuserworkouts", {
 				email,
 			});
-
+			// Format the fetched workouts' datetime
 			const formattedWorkouts =
 				userWorkouts?.workouts?.map((workout) => ({
 					...workout,
@@ -33,7 +36,7 @@ export const Workouts = () => {
 
 		getUserWorkouts();
 	}, []);
-
+	// useEffect hook to detect changes in viewport width
 	useEffect(() => {
 		const handleResize = () => {
 			setIsMobile(window.innerWidth <= 768);
@@ -45,7 +48,7 @@ export const Workouts = () => {
 			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
-
+	// Function to move the slide in the carousel
 	const moveSlide = (direction) => {
 		const newSlide = currentSlide + direction;
 		if (newSlide < 0 || newSlide >= workouts.length) {
@@ -53,11 +56,11 @@ export const Workouts = () => {
 		}
 		setCurrentSlide(newSlide);
 	};
-
+	// Function to remove a workout from the list
 	const removeWorkout = (id) => {
 		setWorkouts((prev) => prev.filter((workout) => workout.id !== id));
 	};
-
+	// Function to handle deleting a workout
 	const handleDeleteWorkout = async (id) => {
 		try {
 			const response = await postRequest("/deleteuserworkouts", {
@@ -74,7 +77,7 @@ export const Workouts = () => {
 			console.error("Error:", error);
 		}
 	};
-
+	// Function to handle marking a workout as done
 	const handleDoneWorkout = async (id) => {
 		try {
 			const response = await postRequest("/archiveuserworkouts", {
@@ -92,6 +95,7 @@ export const Workouts = () => {
 		}
 	};
 
+	// Render the component
 	return (
 		<div className="w-full sm:w-11/12 lg:w-2/3 relative overflow-hidden my-8">
 			<div

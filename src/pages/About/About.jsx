@@ -1,12 +1,15 @@
-import React from "react";
-import "./about.css";
-import { useNavigate } from "react-router-dom";
-import { Button } from "../../components/Button/Button";
-import { ThemeToggleButton } from "../../components/ThemeToggleButton/ThemeToggleButton";
+// Import React and necessary modules
+import React from "react";// Import CSS styles specific to this component
+import "./about.css";// Import useNavigate hook from React Router
+import { useNavigate } from "react-router-dom";// Import useNavigate hook from React Router
+import { Button } from "../../components/Button/Button";// Import Button component
+import { ThemeToggleButton } from "../../components/ThemeToggleButton/ThemeToggleButton";// Import ThemeToggleButton component
 
+// Define the About component as a functional component
 export const About = () => {
-    const navigate = useNavigate();
-
+    const navigate = useNavigate();// Initialize the useNavigate hook from React Router
+    
+    // Define an array of team members with their details
     const teamMembers = [
         {
             name: "Sandra",
@@ -37,7 +40,8 @@ export const About = () => {
                 "Aviv's commitment to our community ensures everyone's journey with us is smooth and fulfilling.",
         },
     ];
-
+    
+    // Render the component
     return (
         <div className="text-center grid place-items-center p-3">
             <ThemeToggleButton />

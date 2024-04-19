@@ -1,3 +1,4 @@
+// Import React, useState hook, and necessary modules
 import React, { useState } from "react";
 import { Paper } from "../../components/Paper";
 import { Input } from "../../components/Input";
@@ -55,11 +56,11 @@ export const Login = () => {
             console.error("Error:", error);
         }
     };
-
+// Function to navigate to the signup page
     const handleSignup = () => {
         navigate("/register");
     };
-
+    // Render the component
     return (
         <div className="grid place-items-center py-5">
             <div className="my-3">

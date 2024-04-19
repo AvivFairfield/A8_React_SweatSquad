@@ -1,3 +1,4 @@
+// Import necessary modules
 import { Line } from "react-chartjs-2";
 
 import { Paper } from "../../components/Paper";
@@ -6,6 +7,7 @@ import { configData } from "./chartConfig";
 
 import { ThemeToggleButton } from "../../components/ThemeToggleButton/ThemeToggleButton";
 
+// Define rewards data containing information about achievements
 const rewards = [
     {
         text: "Best Runner 2024",
@@ -27,6 +29,7 @@ const rewards = [
     },
 ];
 
+// Define the Progresssion functional component
 export const Progresssion = () => {
     return (
         <div className="grid place-items-center py-5">

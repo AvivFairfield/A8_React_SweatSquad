@@ -1,9 +1,11 @@
+// Import React, useState, useEffect hooks, and necessary modules
 import { useState, useEffect } from "react";
 import { Button } from "../../components/Button/Button";
 import { Input } from "../../components/Input";
 import { postRequest, getRequest } from "../../api";
-
+// Define the UserMeasurements component as a functional component
 export const UserMeasurements = () => {
+     // State to manage user measurements and goals
     const [measurements, setMeasurements] = useState({
         height: "",
         weight: "",
@@ -38,37 +40,37 @@ export const UserMeasurements = () => {
 
         fetchUserDetails();
     }, []);
-
+     // Function to handle changes in user measurements
     const handleMeasurementsChange = (e) => {
         setMeasurements({
             ...measurements,
             [e.target.id]: e.target.value,
         });
     };
-
+    // Function to handle changes in user goals
     const handleGoalChange = (e) => {
         setGoal({
             ...goal,
             [e.target.id]: e.target.value,
         });
     };
-
+    // Function to handle form submission
     const handleSubmit = async (e) => {
         try {
             e.preventDefault();
-
+        // Send a POST request to update user account settings
             const response = await postRequest("/accountsettings", {
                 email: localStorage.getItem("email"),
                 height: measurements.height,
                 weight: measurements.weight,
             });
-
+        // Display the response message
             alert(response.message);
         } catch (error) {
             console.error("Error:", error);
         }
     };
-
+    // Render the component
     return (
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             <div className="flex items-end space-x-4">
